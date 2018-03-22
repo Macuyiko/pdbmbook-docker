@@ -19,11 +19,6 @@ if [ ! -f /data/db/.mongodb_password_set ]; then
     touch /data/db/.mongodb_password_set
 fi
 
-if [ ! -f /pdbmbook.tar ]; then
-    wget -O /pdbmbook.tar http://www.pdbmbook.com/static/pdbmbook.tar
-    tar -xf /pdbmbook.tar -C /var/www/html
-fi
-
 rm /var/www/html/index.html
 
 dos2unix /var/www/html/lib/hbase-1.3.1/bin/hbase
@@ -37,10 +32,10 @@ echo ""
 echo ""
 echo "-------------------------------------------------------"
 echo "You can now open a Web Browser to access the playground"
-echo "This window will continue to show debug output"
+echo "This window will start showing debug output..."
 echo "-------------------------------------------------------"
 
-sleep 10
+sleep 30
 
 tail -f /var/log/apache2/access.log & tail -f /var/log/apache2/error.log
 

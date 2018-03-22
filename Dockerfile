@@ -28,6 +28,9 @@ RUN { \
     } | tee "/etc/apache2/conf-available/docker-php.conf" \
     && a2enmod rewrite && a2enconf docker-php
 
+ADD http://www.pdbmbook.com/static/pdbmbook.tar /pdbmbook.tar
+RUN tar -xf /pdbmbook.tar -C /var/www/html
+
 ENV JAVA_HOME /usr
 EXPOSE 80
 

@@ -15,4 +15,4 @@ echo ""
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 
-docker run -i -t -p 8081:80 3089ed7f835a
+docker run -i -t -p 8081:80 5f5fd5b355b3
