@@ -31,6 +31,8 @@ RUN { \
 ADD http://www.pdbmbook.com/static/pdbmbook.tar /pdbmbook.tar
 RUN tar -xf /pdbmbook.tar -C /var/www/html
 
+RUN sed -i 's/define("STANDALONE", false);/define("STANDALONE", true);/g' /var/www/html/configuration.php
+
 ENV JAVA_HOME /usr
 EXPOSE 80
 
